@@ -2,11 +2,13 @@
   "name": "inflex",
   "displayName": "InFlex",
   "description": "Extensión para Visual Studio Code que soporta InFlex",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "publisher": "HenryQH",
   "engines": {
     "vscode": "^1.89.0"
   },
-  "license": "GNU GPLv3",
+  "author": "HenryQH",
+  "license": "LICENSE",
   "private": "false",
   "repository": {
     "type": "git",
