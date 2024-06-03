@@ -1,0 +1,94 @@
+{
+  "Estructura SI": {
+    "prefix": "si",
+    "body": [
+      "si ${1:condicion} entonces",
+      "\t$0",
+      "fin"
+    ],
+    "description": "estructura de control si"
+  },
+  "Estructura PARA": {
+    "prefix": "para",
+    "body": [
+      "para i = ${1:0} hasta $2 entonces",
+      "\t$0",
+      "fin"
+    ],
+    "description": "estructura de repeticion para"
+  },
+  "Estructura PARA DE": {
+    "prefix": "para_de",
+    "body": [
+      "para i = ${1:0} hasta $2 de $3 entonces",
+      "\t$0",
+      "fin"
+    ],
+    "description": "estructura de repeticion para de"
+  },
+  "Estructura MIENTRAS": {
+    "prefix": "mientras",
+    "body": [
+      "mientras ${1:condicion} entonces",
+      "\t$0",
+      "fin"
+    ],
+    "description": "estructura de repeticion mientras"
+  },
+  "Function": {
+    "prefix": "funcion",
+    "body": [
+      "funcion ${1:nombre}(${2:parametros})",
+      "\t$0",
+      "fin"
+    ],
+    "description": "definicion de funcion"
+  },
+  "Fibonacci": {
+    "prefix": "fibonacci",
+    "body": [
+      "funcion fibonacci(n)",
+      "\tsi n == 0 entonces",
+      "\t\tretornar 0",
+      "\tosi n == 1 entonces",
+      "\t\tretornar 1",
+      "\tsino",
+      "\t\tretornar fibonacci(n - 1) + fibonacci(n - 2)",
+      "\tfin",
+      "fin",
+      "\nimprimir(fibonacci(${1:10}))"
+    ],
+    "description": "funcion fibonacci"
+  },
+  "Factorial": {
+    "prefix": "factorial",
+    "body": [
+      "funcion factorial(n)",
+      "\tvar aux = 1",
+      "\tvar i = 1",
+      "\tmientras i <= n entonces",
+      "\t\tvar aux = aux * i",
+      "\t\tvar i = i + 1",
+      "\tfin",
+      "\tretornar aux",
+      "fin",
+      "\nimprimir(factorial(${1:5}))"
+    ],
+    "description": "funcion factorial"
+  },
+  "Sumar Numeros": {
+    "prefix": "sumar",
+    "body": [
+      "funcion sumarNumeros(n)",
+      "\tvar suma = 0",
+      "\tpara i = 1 hasta n + 1 entonces",
+      "\t\tvar suma = suma + i",
+      "\t\tvar i = i + 1",
+      "\tfin",
+      "\tretornar suma",
+      "fin",
+      "\nimprimir(sumarNumeros(${1:10}))"
+    ],
+    "description": "funcion sumar los primeros n números naturales"
+  }
+}

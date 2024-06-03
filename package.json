@@ -1,0 +1,40 @@
+{
+  "name": "inflex",
+  "displayName": "InFlex",
+  "description": "Extensión para Visual Studio Code que soporta InFlex",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "inf",
+        "aliases": [
+          "InFlex",
+          "inf"
+        ],
+        "extensions": [
+          ".inf"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "inf",
+        "scopeName": "source.inflex",
+        "path": "./syntaxes/inf.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "inf",
+        "path": "./snippets/inf.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "InFlex",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#funcion"
+    },
+    {
+      "include": "#var"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#print"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.inf",
+          "match": "\\b(si|osi|sino|mientras|para|hasta|de|entonces|fin|retornar|continuar|romper)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.inf",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.inf",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.inf",
+          "match": "#.*"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "begin": "\\bfuncion\\b",
+          "beginCaptures": {
+            "0": {
+              "name": "storage.type.function.inf"
+            }
+          },
+          "end": "(?=\\()",
+          "patterns": [
+            {
+              "name": "entity.name.function.inf",
+              "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+            }
+          ]
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "begin": "\\b(var)\\b",
+          "beginCaptures": {
+            "0": {
+              "name": "storage.type.variable.inf"
+            }
+          },
+          "end": "(?=;|\\s|=|\\()",
+          "patterns": [
+            {
+              "name": "variable.parameter.inf",
+              "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+            }
+          ]
+        }
+      ]
+    },
+    "funcion": {
+      "patterns": [
+        {
+          "name": "storage.type.function.inf",
+          "match": "\\bfuncion\\b"
+        }
+      ]
+    },
+    "var": {
+      "patterns": [
+        {
+          "name": "storage.type.variable.inf",
+          "match": "\\bvar\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.inf",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "print": {
+      "patterns": [
+        {
+          "name": "support.function.print.inf",
+          "match": "\\bimprimir\\b"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.inflex"
+}
